@@ -1,0 +1,1798 @@
+{
+	"info": {
+		"_postman_id": "48cf14fc-f0db-47ac-a710-91bf45e459d2",
+		"name": "LBS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Setup",
+			"item": [
+				{
+					"name": "Create Devices",
+					"item": [
+						{
+							"name": "Create Device - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('Check device id exists', () => {\r",
+											"    var jsData = JSON.parse(responseBody);\r",
+											"    \r",
+											"    pm.expect(jsData).to.have.property('internalDeviceId');\r",
+											"\r",
+											"    pm.environment.set('device-id1', jsData.internalDeviceId);\r",
+											"\r",
+											"    console.log(\"Device ID: \" + pm.environment.get('device-id1'));\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"32425\",\r\n    \"operatingSystem\": \"iOS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Device - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('Check device id exists', () => {\r",
+											"    var jsData = JSON.parse(responseBody);\r",
+											"    \r",
+											"    pm.expect(jsData).to.have.property('internalDeviceId');\r",
+											"\r",
+											"    pm.environment.set('device-id2', jsData.internalDeviceId);\r",
+											"\r",
+											"    console.log(\"Device ID: \" + pm.environment.get('device-id2'));\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"3436342\",\r\n    \"operatingSystem\": \"Android\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Device - 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('Check device id exists', () => {\r",
+											"    var jsData = JSON.parse(responseBody);\r",
+											"    \r",
+											"    pm.expect(jsData).to.have.property('internalDeviceId');\r",
+											"\r",
+											"    pm.environment.set('device-id3', jsData.internalDeviceId);\r",
+											"\r",
+											"    console.log(\"Device ID: \" + pm.environment.get('device-id3'));\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"4323431\",\r\n    \"operatingSystem\": \"iOS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Device - 4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('Check device id exists', () => {\r",
+											"    var jsData = JSON.parse(responseBody);\r",
+											"    \r",
+											"    pm.expect(jsData).to.have.property('internalDeviceId');\r",
+											"\r",
+											"    pm.environment.set('device-id4', jsData.internalDeviceId);\r",
+											"\r",
+											"    console.log(\"Device ID: \" + pm.environment.get('device-id4'));\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"897524\",\r\n    \"operatingSystem\": \"Android\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Devices",
+					"item": [
+						{
+							"name": "Get Device - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"32425\",\r\n    \"operatingSystem\": \"iOS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device/{{device-id1}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device",
+										"{{device-id1}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Device - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"3436342\",\r\n    \"operatingSystem\": \"Android\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device/{{device-id2}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device",
+										"{{device-id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Device - 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"4323431\",\r\n    \"operatingSystem\": \"iOS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device/{{device-id3}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device",
+										"{{device-id3}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Device - 4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"897524\",\r\n    \"operatingSystem\": \"Android\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device/{{device-id4}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device",
+										"{{device-id4}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Topics",
+					"item": [
+						{
+							"name": "Create Topic - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test('Check topic id exists', () => {\r",
+											"    var jsData = JSON.parse(responseBody);\r",
+											"    \r",
+											"    pm.expect(jsData).to.have.property('topicId');\r",
+											"\r",
+											"    pm.environment.set('topic-id1', jsData.topicId);\r",
+											"\r",
+											"    console.log(\"Device ID: \" + pm.environment.get('topic-id1'));\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Shoe-Shop\",\r\n    \"description\": \"This is a topic for my shoe shops in Berlin\",\r\n    \"transferTime\": \"600\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Topic -2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test('Check topic id exists', () => {\r",
+											"    var jsData = JSON.parse(responseBody);\r",
+											"    \r",
+											"    pm.expect(jsData).to.have.property('topicId');\r",
+											"\r",
+											"    pm.environment.set('topic-id2', jsData.topicId);\r",
+											"\r",
+											"    console.log(\"Device ID: \" + pm.environment.get('topic-id2'));\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"E-Bikes\",\r\n    \"description\": \"This is a Topic for finding E-Bikes\",\r\n    \"transferTime\": \"300\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topic"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Topics",
+					"item": [
+						{
+							"name": "Get All Topics",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topic"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add Devices to Topics",
+					"item": [
+						{
+							"name": "Add D1 to T1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id1}}\",\r\n    \"topicId\": \"{{topic-id1}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/myTopic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"myTopic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add D2 to T1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id2}}\",\r\n    \"topicId\": \"{{topic-id1}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/myTopic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"myTopic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add D2 to T2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id2}}\",\r\n    \"topicId\": \"{{topic-id2}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/myTopic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"myTopic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add D3 to T2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id3}}\",\r\n    \"topicId\": \"{{topic-id2}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/myTopic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"myTopic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add D4 to T2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id4}}\",\r\n    \"topicId\": \"{{topic-id2}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/myTopic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"myTopic"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get all topics a device subscriped to",
+					"item": [
+						{
+							"name": "Get Topics for Device 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lbs-instance}}/v1/myTopic/{{device-id2}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"myTopic",
+										"{{device-id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Topics for Device 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lbs-instance}}/v1/myTopic/{{device-id3}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"myTopic",
+										"{{device-id3}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Location Controller",
+			"item": [
+				{
+					"name": "Send Own Location",
+					"item": [
+						{
+							"name": "Get Device -D1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"32425\",\r\n    \"operatingSystem\": \"iOS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device/{{device-id1}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device",
+										"{{device-id1}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send Own location - D1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id1}}\",\r\n    \"latitudeLocation\": \"52.475939\",\r\n    \"lognitudeLocation\": \"13.436389\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/deviceLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"deviceLocation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send Own location - D2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id2}}\",\r\n    \"latitudeLocation\": \"52.481386\",\r\n    \"lognitudeLocation\": \"13.432775\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/deviceLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"deviceLocation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send Own location - D3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id3}}\",\r\n    \"latitudeLocation\": \"52.473187\",\r\n    \"lognitudeLocation\": \"13.423890\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/deviceLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"deviceLocation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send Own location - D4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id4}}\",\r\n    \"latitudeLocation\": \"52.478132\",\r\n    \"lognitudeLocation\": \"13.427877\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/deviceLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"deviceLocation"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Location of my Device",
+					"item": [
+						{
+							"name": "Get Device -D1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"32425\",\r\n    \"operatingSystem\": \"iOS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device/{{device-id1}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device",
+										"{{device-id1}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get location of D1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id1}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/deviceLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"deviceLocation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get location of D1 Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"{{device-id1}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/deviceLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"deviceLocation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get location of D2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lbs-instance}}/v1/deviceLocation/{{device-id2}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"deviceLocation",
+										"{{device-id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get location of D3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lbs-instance}}/v1/deviceLocation/{{device-id3}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"deviceLocation",
+										"{{device-id3}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get location of D4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lbs-instance}}/v1/deviceLocation/{{device-id4}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"deviceLocation",
+										"{{device-id4}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Devices close to me",
+					"item": [
+						{
+							"name": "Get devices close D1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceIds\": \"{{device-id1}}\",\r\n    \"latitudeLocation\": \"52.478148\",\r\n    \"lognitudeLocation\": \"13.435209\",\r\n    \"topicId\": \"{{topic-id1}}\",\r\n    \"radius\": \"10000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/devicesLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"devicesLocation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get devices close D3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceIds\": \"{{device-id3}}\",\r\n    \"latitudeLocation\": \"52.478148\",\r\n    \"lognitudeLocation\": \"13.435209\",\r\n    \"topicId\": \"{{topic-id2}}\",\r\n    \"radius\": \"10000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/devicesLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"devicesLocation"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Topic Locations Controller",
+			"item": [
+				{
+					"name": "Create Topic Location",
+					"item": [
+						{
+							"name": "createTopicLocation T1-Neukölln",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('Check topicLocation id exists', () => {\r",
+											"    var jsData = JSON.parse(responseBody);\r",
+											"    \r",
+											"    pm.expect(jsData).to.have.property('topicLocationId');\r",
+											"\r",
+											"    pm.environment.set('topicLocation-id1', jsData.topicLocationId);\r",
+											"\r",
+											"    console.log(\"Topic Location ID: \" + pm.environment.get('topicLocation-id1'));\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"topicId\": \"{{topic-id1}}\",\r\n    \"longitudeLocation\": \"13.429856\",\r\n    \"latitudeLocation\": \"52.476960\",\r\n    \"alarmRadius\": \"500\",\r\n    \"messageTitle\": \"You are close to our shoe shop\",\r\n    \"messageBody\": \"You are in the radius of 500 of our shoe shop in Berlin Neuköln. Go and check it out! :)\",\r\n    \"proojectId\": \"231\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topicLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topicLocation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createTopicLocation T1-Friedrichshain",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('Check topicLocation id exists', () => {\r",
+											"    var jsData = JSON.parse(responseBody);\r",
+											"    \r",
+											"    pm.expect(jsData).to.have.property('topicLocationId');\r",
+											"\r",
+											"    pm.environment.set('topicLocation-id2', jsData.topicLocationId);\r",
+											"\r",
+											"    console.log(\"Topic Location ID: \" + pm.environment.get('topicLocation-id2'));\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"topicId\": \"{{topic-id1}}\",\r\n    \"longitudeLocation\": \"13.468043\",\r\n    \"latitudeLocation\": \"52.504345\",\r\n    \"alarmRadius\": \"1000\",\r\n    \"messageTitle\": \"You are close to our shoe shop\",\r\n    \"messageBody\": \"You are in the radius of 1000 of our shoe shop in Berlin Friedrichshain. Go and check it out! :)\",\r\n    \"proojectId\": \"231\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topicLocation",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topicLocation"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Topic Location",
+					"item": [
+						{
+							"name": "Get Topic Loccations of T1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topicLocation/{{topic-id1}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topicLocation",
+										"{{topic-id1}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Teardown",
+			"item": [
+				{
+					"name": "Delete Key Location",
+					"item": [
+						{
+							"name": "Delete Topic Location 1 of T1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topicLocation/{{topicLocation-id1}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topicLocation",
+										"{{topicLocation-id1}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Topic Location 2 of T1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topicLocation/{{topicLocation-id2}}",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topicLocation",
+										"{{topicLocation-id2}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Topics",
+					"item": [
+						{
+							"name": "Delete Topic - 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"{{topic-id1}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Topic - 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"{{topic-id2}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/topic",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"topic"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Devices",
+					"item": [
+						{
+							"name": "Delete Device -1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"{{device-id1}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Device -2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"{{device-id2}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Device -3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"{{device-id3}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Device -4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"{{device-id4}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lbs-instance}}/v1/device",
+									"host": [
+										"{{lbs-instance}}"
+									],
+									"path": [
+										"v1",
+										"device"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

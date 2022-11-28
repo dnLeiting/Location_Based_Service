@@ -1,0 +1,22 @@
+version: '3.3'
+
+volumes:
+  postgres-data:
+    external: true
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:12.0-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./assets/postgres/initd:/docker-entrypoint-initdb.d/
+      - postgres-data:/var/lib/postgresql/data
+
+networks:
+  postgres:
+    driver: brige
